@@ -7,7 +7,12 @@ class AppInstalledChecker {
     static getAppList() {
         return Object.keys(APP_LIST);
     }
-
+    // <<<<<<<< code here getPackageName
+    static getPackageName(appName){
+        let tmp = APP_LIST[appName] || {};
+        return tmp.pkgName;
+    }
+    // >>>>>>>> code here getPackageName
     static checkPackageName(packagename) {
         return new Promise((resolve, reject) => {
             CheckPackageInstallation.isPackageInstalled(packagename, (isInstalled) => {
